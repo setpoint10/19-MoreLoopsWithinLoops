@@ -409,7 +409,15 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # -------------------------------------------------------------------------
-
+    if len(seq_seq[0])==0 or len(seq_seq)==0:
+        return False
+    else:
+        for k in range(len(seq_seq)-1):
+            for i in range(len(seq_seq[k])-1):
+                for j in range(len(seq_seq[0])):
+                    if seq_seq[0][j]==seq_seq[k+1][i+1]:
+                        return True
+        return False
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
